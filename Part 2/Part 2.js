@@ -1,3 +1,4 @@
+
 //=============================================================================
 /*                                  Part 2                                   */
 //=============================================================================
@@ -29,6 +30,74 @@
   g - sort the players in the arrayOfPlayers by the key
 		sortPalyerBy(arrayOfPlayers, "age");
 		sortPalyerBy(arrayOfPlayers, "name");
- */
+		*/
 
 //writ your code here .....
+
+var arrayOfPlayers = [] ; 
+var Player = function(name){
+	var players ={};
+	players.name = name;
+	players.addInfo = addInfo;
+	players.increaseLevel =increaseLevel ;
+	players.isAvailable = isAvailable;
+	players.decrease = decrease ;
+	players.sortPalyerBy = sortPalyerBy;
+
+	return players ;
+}
+
+
+var addInfo = function(age, position, level, availability){
+	return arrayOfPlayers.push({
+		name:this.name,
+		age:age,
+		position:position,
+		level:level,
+		availability:availability
+	})
+}
+var increaseLevel = function(n){
+	var c=this.name
+	arrayOfPlayers.forEach(function(elem , i){
+		if(elem['name']===c){
+			elem['level']= elem['level'] + n ;
+		}
+	})
+}
+
+var isAvailable = function(){
+	var n = this.name;
+	var x = false;
+	arrayOfPlayers.forEach(function(elem, i){
+		if(elem['name']===n){
+			x =elem['availability'] ;
+		}
+	})
+	return x;
+	
+}
+
+var decrease = function(){
+	arrayOfPlayers.forEach(function(elem ,i){
+		if (elem['age'] > 30){
+			elem['level']=elem['level'] -1
+		}
+	})
+}
+
+var sortPalyerBy = function(array , key){
+	return  array.sort(function(a,b){
+		return a[key] - b[key]
+	})
+}
+
+var player1 = Player("Jony");
+var player2 = Player("Ibrahim");
+var player3 = Player("Fatima");
+var player4 = Player("Majd");
+
+player1.addInfo(33 , "xx" , 3 , true)
+player2.addInfo(23 , "yy" , 1 , false)
+player3.addInfo(31 , "kk" , 5 , true)
+player4.addInfo(25 , "zz" , 8 , false)
