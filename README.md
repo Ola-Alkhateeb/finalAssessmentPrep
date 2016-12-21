@@ -7,7 +7,7 @@
  - create  a pull request from your gitHub to Rbk-org  
 
 
- # The Instruction 
+ # The Instructions
 - DON'T ask the instructor before you read the rules and the instructions clearly
 - DON'T use slack to send anything to anyone
 - DON'T look to your old code
